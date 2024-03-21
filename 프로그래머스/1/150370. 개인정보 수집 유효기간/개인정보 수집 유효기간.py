@@ -1,5 +1,3 @@
-import datetime
-
 def solution(today, terms, privacies):    
     answer = []
     terms_dict = {}
