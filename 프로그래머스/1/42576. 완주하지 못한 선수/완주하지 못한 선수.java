@@ -12,9 +12,9 @@ class Solution {
             map.put(c, map.get(c) - 1);
         }
         
-        for(String r : map.keySet()){
-            if (map.get(r) != 0){
-                return r;
+        for(String s : map.keySet()){
+            if(map.get(s) != 0){
+                return s;
             }
         }
         
