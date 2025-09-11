@@ -4,16 +4,17 @@ class Solution {
         dfs(numbers, target, 0, 0);
         return answer;
     }
-    
-    public void dfs(int[] numbers, int target, int index, int sum){
-        if(index == numbers.length){
-            if(sum == target){
+    void dfs(int[] numbers, int target, int sum, int count){
+        // 모든 숫자를 다 사용하면 리턴
+        if(numbers.length == count){ //모든 수 사용
+            if(target == sum){ //타겟넘버 도달
                 answer++;
-            }
-            return;
+                return;
+            }    
         }
-        dfs(numbers, target, index + 1, sum + numbers[index]);
-        dfs(numbers, target, index + 1, sum - numbers[index]);
-        
+        else{
+            dfs(numbers, target, sum - numbers[count], count+1);
+            dfs(numbers, target, sum + numbers[count], count+1);
+        }
     }
 }
