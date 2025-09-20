@@ -4,15 +4,17 @@ class Solution {
     public String solution(String[] participant, String[] completion) {
         Map<String, Integer> map = new HashMap<>();
         
-        for(int i=0; i<participant.length; i++){
+        for(int i = 0; i < participant.length; i++){
             map.put(participant[i], map.getOrDefault(participant[i], 0)+1);
         }
-        for(int i=0; i<completion.length; i++){
+        
+        for(int i = 0; i < completion.length; i++){
             map.put(completion[i], map.get(completion[i])-1);
         }
-        for(String k : map.keySet()){
-            if(map.get(k) == 1){
-                return k;
+        
+        for(String s: map.keySet()){
+            if(map.get(s) == 1){
+                return s;
             }
         }
         String answer = "";
