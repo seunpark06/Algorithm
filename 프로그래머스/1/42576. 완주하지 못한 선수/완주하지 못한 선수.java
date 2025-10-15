@@ -2,10 +2,10 @@ import java.util.*;
 
 class Solution {
     public String solution(String[] participant, String[] completion) {
+        String answer = "";
         Map<String, Integer> map = new HashMap<>();
-        
         for(int i = 0; i < participant.length; i++){
-            map.put(participant[i], map.getOrDefault(participant[i], 0)+1);
+            map.put(participant[i], map.getOrDefault(participant[i], 0) + 1);
         }
         
         for(int i = 0; i < completion.length; i++){
@@ -13,11 +13,10 @@ class Solution {
         }
         
         for(String s: map.keySet()){
-            if(map.get(s) == 1){
+            if(map.get(s) != 0){
                 return s;
             }
         }
-        String answer = "";
         return answer;
     }
 }
